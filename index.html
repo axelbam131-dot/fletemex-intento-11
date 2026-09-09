@@ -1,9 +1,9 @@
 <!-- ==========================================================================
-  Proyecto: Fletemex — Landing Page Comercial Integrada
+  Proyecto: Fletemex — Landing Page Comercial
   Autores: Axel Martínez y Martin Tapia
   Fecha: Septiembre 2026
-  Tecnologías: HTML5 Semántico, Tailwind CSS, FormSubmit, WhatsApp API
-  Objetivo: Sitio web corporativo interactivo y funcional
+  Tecnologías: HTML5 Semántico, Tailwind CSS, JavaScript Vanilla, FormSubmit
+  Objetivo: Sitio web corporativo de Fletemex (Single Page Application)
 ========================================================================== -->
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
@@ -41,10 +41,20 @@
   </script>
 
   <style>
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #0B1120; }
-    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #059669; }
+    /* Estilos personalizados para scroll y animaciones sutiles */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0B1120;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #059669;
+    }
   </style>
 </head>
 <body class="bg-brand-surface text-slate-100 font-sans antialiased selection:bg-brand-accent selection:text-white">
@@ -69,10 +79,10 @@
           <a href="#servicios" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors">Servicios</a>
           <a href="#infraestructura" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors">Infraestructura</a>
           <a href="#historia" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors">Nosotros</a>
-          <!-- Botón directo a WhatsApp -->
+          <!-- Botón WhatsApp Navbar -->
           <a target="_blank" href="https://wa.me/524436816683?text=Hola,%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20cotizar%20un%20servicio%20log%C3%ADstico." class="px-4 py-2 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-lg shadow-lg shadow-emerald-900/40 transition-all active:scale-95 flex items-center gap-2">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            WhatsApp
+            Cotizar Servicio
           </a>
         </div>
       </div>
@@ -81,6 +91,7 @@
 
   <!-- Sección Hero -->
   <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden border-b border-brand-border/40">
+    <!-- Efecto de fondo radial -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl z-0 pointer-events-none">
       <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-emerald-600/20 blur-[120px] rounded-full"></div>
     </div>
@@ -97,27 +108,27 @@
       <p class="mt-4 text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
         Erradicamos la informalidad del transporte de carga. Conectamos empresas y productores mediante vehículos modernos bajo arrendamiento, operadores certificados y trazabilidad satelital en cada kilómetro.
       </p>
-
-      <!-- Botones de Acción Principales -->
+      
+      <!-- Contenedor de Botones -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
         <!-- Botón WhatsApp -->
         <a target="_blank" href="https://wa.me/524436816683?text=Hola,%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20cotizar%20un%20servicio%20log%C3%ADstico." class="w-full sm:w-auto px-8 py-3.5 text-base font-bold text-brand-surface bg-emerald-400 hover:bg-emerald-300 rounded-xl shadow-lg shadow-emerald-900/50 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
           Cotizar por WhatsApp
         </a>
-        <!-- Botón ancla hacia el formulario real -->
+        <!-- Botón que lleva al Formulario -->
         <a href="#contacto-formulario" class="w-full sm:w-auto px-8 py-3.5 text-base font-bold text-white bg-slate-800 border border-slate-700 hover:bg-slate-700 rounded-xl transition-all flex items-center justify-center gap-2">
           <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
           Solicitar por Correo
         </a>
       </div>
 
-      <!-- Módulo de Código QR Escaneable para la Clase -->
-      <div class="mt-4 bg-brand-slate/40 p-5 rounded-3xl border border-brand-border inline-flex flex-col items-center justify-center shadow-lg transition-transform hover:scale-105">
+      <!-- Módulo de Código QR Escaneable -->
+      <div class="mt-6 bg-brand-slate/40 p-5 rounded-3xl border border-brand-border inline-flex flex-col items-center justify-center shadow-lg transition-transform hover:scale-105">
         <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-3">Proyecto Activo</span>
-        <!-- La API genera dinámicamente el QR apuntando a tu link oficial -->
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://axelbam131-dot.github.io/Fletemex/&color=0F172A&bgcolor=FFFFFF" alt="Código QR Fletemex" class="w-32 h-32 rounded-xl p-1.5 bg-white shadow-sm mb-3">
-        <p class="text-sm text-slate-300 font-medium">Escanea para explorar la app</p>
+        <!-- Código QR Dinámico apuntando a tu URL -->
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://axelbam131-dot.github.io/fletemex-intento-11/&color=0F172A&bgcolor=FFFFFF" alt="Código QR Fletemex" class="w-32 h-32 rounded-xl p-1.5 bg-white shadow-sm mb-3">
+        <p class="text-sm text-slate-300 font-medium">Escanea para explorar la web en tu móvil</p>
       </div>
 
       <!-- Barra de KPIs (Estadísticas) -->
@@ -184,11 +195,214 @@
             <p class="text-sm text-slate-300 mt-1">Flotilla moderna renovada vía arrendamiento (leasing) y mantenimiento preventivo programado.</p>
           </div>
         </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="bg-brand-slate/40 border border-brand-border p-6 rounded-2xl hover:border-emerald-500/30 transition-colors">
+          <div class="flex items-start justify-between border-b border-brand-border/60 pb-4 mb-4">
+            <div>
+              <span class="text-xs font-bold text-rose-400 uppercase">La industria tradicional</span>
+              <h4 class="text-lg font-bold text-white mt-1">Retrasos en Entregas</h4>
+            </div>
+            <div class="p-2 rounded-lg bg-rose-500/10 text-rose-400">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+          </div>
+          <div class="bg-emerald-900/20 border border-emerald-500/20 p-4 rounded-xl">
+            <span class="text-xs font-bold text-emerald-400 uppercase">El Estándar Fletemex</span>
+            <p class="text-sm text-slate-300 mt-1">Logística predictiva, despachos programados y asignación de última milla para evitar cuellos de botella.</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="bg-brand-slate/40 border border-brand-border p-6 rounded-2xl hover:border-emerald-500/30 transition-colors">
+          <div class="flex items-start justify-between border-b border-brand-border/60 pb-4 mb-4">
+            <div>
+              <span class="text-xs font-bold text-amber-400 uppercase">La industria tradicional</span>
+              <h4 class="text-lg font-bold text-white mt-1">Mal Uso y Descuido</h4>
+            </div>
+            <div class="p-2 rounded-lg bg-amber-500/10 text-amber-400">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+            </div>
+          </div>
+          <div class="bg-emerald-900/20 border border-emerald-500/20 p-4 rounded-xl">
+            <span class="text-xs font-bold text-emerald-400 uppercase">El Estándar Fletemex</span>
+            <p class="text-sm text-slate-300 mt-1">Operadores sometidos a procesos de certificación y entrenados para proteger la carga del cliente.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Sección: Formulario de Contacto Funcional -->
+  <!-- Sección: Servicios -->
+  <section id="servicios" class="py-20 bg-brand-surface border-t border-brand-border/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 md:flex md:items-end md:justify-between">
+        <div class="max-w-2xl">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-emerald-400 mb-2">Portafolio Integral</h2>
+          <h3 class="text-3xl md:text-4xl font-black text-white">Servicios Logísticos Modulares</h3>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Servicio 1 -->
+        <div class="bg-brand-slate/30 border border-brand-border hover:bg-brand-slate/60 p-6 rounded-2xl transition-colors group">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 text-emerald-400 border border-slate-700 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-2">B2B y Agroproductores</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Transporte de alto volumen para empresas, comercios y huertas. Traslados directos hacia centros de distribución y empacadoras con protección climática.
+          </p>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="bg-brand-slate/30 border border-brand-border hover:bg-brand-slate/60 p-6 rounded-2xl transition-colors group">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 text-emerald-400 border border-slate-700 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-2">Última Milla y Reparto</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Distribución urbana ágil y entregas programadas. Consolidación de paquetes para redistribución rápida en tiendas de detalle y clientes finales.
+          </p>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="bg-brand-slate/30 border border-brand-border hover:bg-brand-slate/60 p-6 rounded-2xl transition-colors group">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 text-emerald-400 border border-slate-700 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-2">Flexibles y Auxiliares</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Renta de vehículos de carga con operador, mudanzas corporativas, y servicio de almacenamiento temporal con maniobra especializada en bodega.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección: Infraestructura -->
+  <section id="infraestructura" class="py-20 bg-brand-navy border-t border-brand-border/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-sm font-bold uppercase tracking-wider text-emerald-400 mb-2">Clasificación de Activos</h2>
+        <h3 class="text-3xl md:text-4xl font-black text-white">Estructura Tecnológica y Flotilla</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Col 1 -->
+        <div class="border border-brand-border bg-brand-slate/50 rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-2.5 rounded-lg bg-emerald-500/20 text-emerald-400">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+            </div>
+            <h4 class="text-lg font-bold text-white">Flota Rodante</h4>
+          </div>
+          <ul class="space-y-4 text-sm text-slate-300">
+            <li class="flex items-start gap-3">
+              <span class="text-emerald-400 mt-0.5">●</span>
+              <span><strong>Camionetas de Carga:</strong> Chasis y vans ideales para tráfico urbano y volumen ligero.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-emerald-400 mt-0.5">●</span>
+              <span><strong>Camiones Ligeros/Medios:</strong> Unidades de 3.5 a 8 toneladas para traslados pesados.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-emerald-400 mt-0.5">●</span>
+              <span><strong>Remolques:</strong> Cajas secas cerradas para protección térmica y de seguridad.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="border border-brand-border bg-brand-slate/50 rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-2.5 rounded-lg bg-blue-500/20 text-blue-400">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+            </div>
+            <h4 class="text-lg font-bold text-white">Telemetría y Control</h4>
+          </div>
+          <ul class="space-y-4 text-sm text-slate-300">
+            <li class="flex items-start gap-3">
+              <span class="text-blue-400 mt-0.5">●</span>
+              <span><strong>Módulos GPS:</strong> Cobertura satelital para el dueño de la mercancía.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-blue-400 mt-0.5">●</span>
+              <span><strong>Seguridad Física:</strong> Sensores de apertura, botón de pánico y paro remoto.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-blue-400 mt-0.5">●</span>
+              <span><strong>Tablero Digital:</strong> Auditoría de tiempos, paradas no autorizadas y rutas.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="border border-brand-border bg-brand-slate/50 rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-2.5 rounded-lg bg-amber-500/20 text-amber-400">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            </div>
+            <h4 class="text-lg font-bold text-white">Maniobra Segura</h4>
+          </div>
+          <ul class="space-y-4 text-sm text-slate-300">
+            <li class="flex items-start gap-3">
+              <span class="text-amber-400 mt-0.5">●</span>
+              <span><strong>Carga y Descarga:</strong> Plataformas portátiles, patines y diablos de uso rudo.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-amber-400 mt-0.5">●</span>
+              <span><strong>Embalaje Protector:</strong> Esquinero, playo, lonas térmicas y colchonetas antigolpes.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-amber-400 mt-0.5">●</span>
+              <span><strong>EPP Operadores:</strong> Calzado de seguridad, guantes y soporte lumbar obligatorio.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección: Historia / Nosotros -->
+  <section id="historia" class="py-20 bg-brand-surface border-t border-brand-border/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-r from-brand-slate to-emerald-950/30 rounded-3xl p-8 md:p-12 border border-brand-border flex flex-col md:flex-row items-center gap-10">
+        <div class="md:w-1/2">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-emerald-400 mb-2">El Origen</h2>
+          <h3 class="text-3xl font-black text-white mb-4">Nacido del asfalto y la necesidad del mercado</h3>
+          <p class="text-slate-400 mb-4 leading-relaxed">
+            Fletemex no se diseñó detrás de un escritorio. Nació de la experiencia real siendo repartidor de refacciones y observando un patrón: las empresas y productores agrícolas (como los empacadores de aguacate) sufrían constantes pérdidas operativas por culpa de transportistas informales, unidades en mal estado y entregas tardías.
+          </p>
+          <p class="text-slate-400 leading-relaxed">
+            Aplicando conocimientos del sector financiero automotriz, implementamos un modelo de <strong>arrendamiento estratégico (leasing)</strong>. Esto nos permite incorporar vehículos de última generación sin comprometer la liquidez, asegurando que nuestros clientes siempre tengan una unidad confiable en la puerta de su negocio.
+          </p>
+        </div>
+        <div class="md:w-1/2 bg-brand-navy border border-brand-border p-6 rounded-2xl shadow-xl">
+          <h4 class="text-white font-bold mb-4 flex items-center gap-2">
+            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            Nuestros Valores Núcleo
+          </h4>
+          <ul class="space-y-4">
+            <li class="bg-brand-slate/50 p-3 rounded-lg border border-brand-border/60">
+              <strong class="text-emerald-300 block text-sm">Rapidez y Certidumbre</strong>
+              <span class="text-xs text-slate-400">Si decimos una hora, se respeta la hora.</span>
+            </li>
+            <li class="bg-brand-slate/50 p-3 rounded-lg border border-brand-border/60">
+              <strong class="text-emerald-300 block text-sm">Cero Capex Vehicular</strong>
+              <span class="text-xs text-slate-400">Nuestros clientes tercerizan el gasto completo de la flotilla.</span>
+            </li>
+            <li class="bg-brand-slate/50 p-3 rounded-lg border border-brand-border/60">
+              <strong class="text-emerald-300 block text-sm">Respeto por la Carga</strong>
+              <span class="text-xs text-slate-400">La mercancía de nuestro cliente es el motor de su economía.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUEVA SECCIÓN: Formulario de Contacto Funcional -->
   <section id="contacto-formulario" class="py-20 bg-brand-surface border-t border-brand-border/40">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
@@ -197,24 +411,19 @@
         <p class="mt-4 text-slate-400">Completa el formulario y nos comunicaremos contigo de inmediato con una propuesta adaptada a tu mercancía.</p>
       </div>
 
-      <!-- FORMULARIO REAL CON FORMSUBMIT -->
-      <!-- Acción configurada a tu correo universitario -->
+      <!-- FORMULARIO REAL CON FORMSUBMIT (Apunta a tu correo UMSNH) -->
       <form action="https://formsubmit.co/1627675g@umich.mx" method="POST" class="bg-brand-slate/40 border border-brand-border p-8 rounded-2xl shadow-xl shadow-brand-navy/50">
         
         <!-- Configuraciones ocultas de FormSubmit -->
         <input type="hidden" name="_subject" value="¡Nueva Cotización desde Sitio Web Fletemex!">
         <input type="hidden" name="_template" value="box">
         <input type="hidden" name="_captcha" value="true">
-        <!-- Puedes quitar el comentario de la siguiente línea si quieres que tras enviar no se vaya a otra página
-        <input type="hidden" name="_next" value="https://axelbam131-dot.github.io/Fletemex/"> -->
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <!-- Nombre -->
           <div>
             <label class="block text-sm font-medium text-slate-300 mb-2">Nombre completo o Empresa <span class="text-rose-400">*</span></label>
             <input type="text" name="nombre" required placeholder="Ej. Distribuidora Michoacana" class="w-full bg-brand-navy border border-brand-border rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-colors">
           </div>
-          <!-- Teléfono -->
           <div>
             <label class="block text-sm font-medium text-slate-300 mb-2">Teléfono / WhatsApp <span class="text-rose-400">*</span></label>
             <input type="tel" name="telefono" required placeholder="Ej. 443 000 0000" class="w-full bg-brand-navy border border-brand-border rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-colors">
@@ -231,9 +440,9 @@
           <textarea name="mensaje" rows="4" required placeholder="Describe qué tipo de mercancía deseas transportar, volumen aproximado y ruta deseada..." class="w-full bg-brand-navy border border-brand-border rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-colors resize-none"></textarea>
         </div>
 
-        <div class="flex items-center justify-between">
-          <span class="text-xs text-slate-500 flex-1">Los datos se enviarán cifrados a nuestro equipo logístico.</span>
-          <button type="submit" class="px-8 py-3.5 font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl shadow-lg shadow-emerald-900/40 transition-all active:scale-95 flex items-center gap-2">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span class="text-xs text-slate-500 text-center sm:text-left">Los datos se enviarán cifrados a nuestro equipo logístico.</span>
+          <button type="submit" class="w-full sm:w-auto px-8 py-3.5 font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl shadow-lg shadow-emerald-900/40 transition-all active:scale-95 flex items-center justify-center gap-2">
             Enviar Solicitud
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </button>
@@ -242,8 +451,8 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-brand-navy border-t border-brand-border pt-16 pb-8">
+  <!-- Footer / Contacto -->
+  <footer id="contacto" class="bg-brand-navy border-t border-brand-border pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
         <div class="col-span-1 md:col-span-2">
@@ -256,9 +465,20 @@
           <p class="text-sm text-slate-400 max-w-sm mb-6">
             Aliado estratégico para empresas, negocios y agroproductores que requieren logística sin interrupciones.
           </p>
-          <a target="_blank" href="https://wa.me/524436816683?text=Hola,%20me%20gustar%C3%ADa%20hacer%20una%20pregunta%20r%C3%A1pida." class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-brand-surface bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-colors">
-            Contactar de inmediato
+          <!-- Botón de Footer apuntando a tu WhatsApp -->
+          <a target="_blank" href="https://wa.me/524436816683?text=Hola,%20quisiera%20saber%20m%C3%A1s%20sobre%20Fletemex." class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-brand-surface bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-colors">
+            Contactar de Inmediato
           </a>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-4">Servicios Rápidos</h4>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="#servicios" class="hover:text-emerald-400 transition">Rutas B2B</a></li>
+            <li><a href="#servicios" class="hover:text-emerald-400 transition">Última Milla</a></li>
+            <li><a href="#servicios" class="hover:text-emerald-400 transition">Mudanzas</a></li>
+            <li><a href="#servicios" class="hover:text-emerald-400 transition">Arrendamiento</a></li>
+          </ul>
         </div>
 
         <div>
@@ -280,7 +500,7 @@
         <p class="text-xs text-slate-500">
           &copy; 2026 Fletemex. Proyecto de Administración y Emprendimiento. Todos los derechos reservados.
         </p>
-        <p class="text-xs text-slate-500 font-medium tracking-wide">
+        <p class="text-xs text-slate-500 font-medium">
           Diseñado por <span class="text-slate-300 font-bold">Axel Martínez y Martin Tapia</span>
         </p>
       </div>
